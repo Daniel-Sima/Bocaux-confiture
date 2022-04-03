@@ -1,0 +1,14 @@
+set terminal png
+set output "Algorithme_II.png" 
+set title "Temps de calcul - Algorithme II"
+set dgrid3d 30, 30
+set hidden3d
+set grid nopolar 
+set xlabel offset character -3, -2, 0 font "" textcolor lt -1 norotate
+set xlabel "Quantité de confiture S"
+set ylabel "K"
+set ylabel offset character -3, -2, 0 font "" textcolor lt -1 norotate
+set zlabel "Temps d'execution en secondes"
+set zlabel offset character 0, 8, 0 font "" textcolor lt -1 norotate
+set ticslevel 0 
+splot "AlgoRetour_d2.data" using 1:2:3 with lines title "d = 2", "AlgoRetour_d3.data" using 1:2:3 with lines title "d = 3", "AlgoRetour_d4.data" using 1:2:3 with lines title "d = 4"
